@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+
+spring:
+  application:
+    name: api-gateway-server
+  cloud:
+    gateway:
+      routes:
+        - id: member-service
+          uri: lb://MEMBER-SERVER
+          predicates:
+            - Path=/member/**
+        - id: good-deed-service
+          uri: lb://GOOD-DEED-SERVER
+          predicates:
+            - Path=/good-deed/**
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
