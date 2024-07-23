@@ -4,6 +4,22 @@ server:
 spring:
   application:
     name: good-deed-server
+  datasource:
+    url: jdbc:mysql://localhost:3306/gooddeed?useSSL=false&serverTimezone=Asia/Seoul&useUnicode=true&characterEncoding=utf-8
+    username: root
+    password: 1234
+    name: com.mysql.cj.jdbc.Driver
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: false
+        format_sql: true
+        highlight_sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQLDialect
 
 eureka:
   client:
