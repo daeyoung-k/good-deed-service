@@ -11,7 +11,7 @@ spring:
         - id: member-service
           uri: lb://MEMBER-SERVER
           predicates:
-            - Path=/member/**
+            - Path=/member/**, /callback/**
         - id: good-deed-service
           uri: lb://GOOD-DEED-SERVER
           predicates:

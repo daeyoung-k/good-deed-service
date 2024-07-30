@@ -1,18 +1,14 @@
 package com.kane.member.controller
 
-import jakarta.servlet.http.HttpServletRequest
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestHeader
-import org.springframework.web.bind.annotation.RestController
+import com.kane.member.dto.BaseResponse
+import org.springframework.web.bind.annotation.*
 
 @RestController
 class MemberController {
 
-    @GetMapping("/member")
-    fun getMemberList(
-        @RequestHeader headers: Map<String, String>,
-        request: HttpServletRequest
-    ): List<String> {
-        return listOf("member1", "member2", "member3")
+    @GetMapping("/login")
+    fun memberLogin(
+    ): BaseResponse {
+        return BaseResponse()
     }
 }

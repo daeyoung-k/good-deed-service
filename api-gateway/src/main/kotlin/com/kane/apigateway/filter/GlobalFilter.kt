@@ -15,8 +15,10 @@ class GlobalFilter {
             val modifiedExchange = exchange.mutate()
                 .request { request ->
                     request.headers { headers ->
+                        println("headers: $headers")
                         headers.add("apigateway", "hello gateway")
                     }
+
                 }
                 .build()
             chain.filter(modifiedExchange)

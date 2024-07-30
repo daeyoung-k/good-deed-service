@@ -1,5 +1,7 @@
 server:
   port: 8081
+  servlet:
+    context-path: /member
 
 spring:
   application:
@@ -20,7 +22,18 @@ spring:
         highlight_sql: true
     database: mysql
     database-platform: org.hibernate.dialect.MySQLDialect
-
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 1007251620681-uknii7rn0ll4ojacb7n5b5os38lfa0i8.apps.googleusercontent.com
+            client-secret: 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
+            redirect-uri: http://localhost:8080/callback/oauth2/code/google
+            authorization-grant-type: authorization_code
+            scope:
+              - email
+              - profile
 
 eureka:
   client:
