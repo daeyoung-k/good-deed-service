@@ -28,13 +28,9 @@ class SecurityConfig(
                 }
             }
             .authorizeHttpRequests {
-                it.requestMatchers(
-                    "/member/login",
-                    "/callback/oauth2/code/google",
-                ).permitAll()
-                it.requestMatchers(
-                    "/member/oauth2/authorization/google",
-                    ).authenticated()
+
+                it.requestMatchers("/login").permitAll()
+                it.anyRequest().authenticated()
 
             }
 
