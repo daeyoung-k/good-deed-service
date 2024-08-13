@@ -12,7 +12,7 @@ abstract class BaseTimeEntity(
 
     @CreatedDate
     @Column(updatable = false)
-    val createdAt: LocalDateTime? = null,
+    val createdAt: LocalDateTime? = LocalDateTime.now(),
 
     @LastModifiedDate
     val updatedAt: LocalDateTime? = null,

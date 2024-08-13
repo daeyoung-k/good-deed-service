@@ -39,6 +39,9 @@ spring:
               - email
               - profile
 
+jwt:
+  secret: 7a9eWE6Bd0cEu4xP5TT95KUYllR8RqhP7BfA+9rsoG8sugI4fHBa/X8PZ2l3psJsfaKQQG6x9DYpK7Sd5TJrAw==
+
 eureka:
   client:
     fetch-registry: true

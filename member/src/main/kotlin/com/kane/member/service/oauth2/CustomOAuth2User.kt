@@ -9,7 +9,7 @@ class CustomOAuth2User(
     val member: Member
 ): OAuth2User {
     override fun getName(): String {
-        return member.name
+        return member.email
     }
 
     override fun getAttributes(): MutableMap<String, Any> {
@@ -23,6 +23,9 @@ class CustomOAuth2User(
 
     override fun getAuthorities(): MutableCollection<out GrantedAuthority> {
         val authorities = mutableListOf<GrantedAuthority>()
+        member.roles?.forEach {
+            authorities.add(GrantedAuthority { it.role.toString() })
+        }
         return authorities
     }
 }

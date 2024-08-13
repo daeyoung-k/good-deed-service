@@ -11,4 +11,10 @@ class MemberController {
     ): BaseResponse {
         return BaseResponse()
     }
+
+    @GetMapping("/home")
+    fun home(
+    ): BaseResponse {
+        return BaseResponse()
+    }
 }

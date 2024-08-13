@@ -31,4 +31,8 @@ data class Member(
 
     val password: String? = null,
 
-): BaseTimeEntity()
+): BaseTimeEntity() {
+
+    @OneToMany(mappedBy = "member", fetch = FetchType.EAGER, cascade = [CascadeType.ALL])
+    val roles: List<Role>? = null
+}

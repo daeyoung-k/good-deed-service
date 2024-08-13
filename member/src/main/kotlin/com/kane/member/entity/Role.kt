@@ -12,5 +12,9 @@ data class Role(
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, unique = true)
-    val role: MemberRole
+    val role: MemberRole,
+
+    @ManyToOne
+    @JoinColumn(name = "member_id")
+    val member: Member
 )
