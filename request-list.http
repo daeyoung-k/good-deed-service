@@ -1,0 +1,15 @@
+# Member module
+## 캐시 도메인
+
+### 캐시 저장
+POST http://localhost:8080/member/cache/set
+Content-Type: application/json
+
+{
+  "key": "test1",
+  "value": {"test_name": "test_123"},
+  "expiration": 300
+}
+
+### 캐시 조회
+GET http://localhost:8080/member/cache/get?key=test1

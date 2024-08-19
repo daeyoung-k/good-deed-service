@@ -36,6 +36,7 @@ class SecurityConfig(
                 it.requestMatchers(
                     "/login",
                     "/home",
+                    "/cache/**",
                 ).permitAll()
                 it.anyRequest().authenticated()
 

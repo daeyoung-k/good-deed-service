@@ -34,10 +34,14 @@ spring:
             client-id: 1007251620681-uknii7rn0ll4ojacb7n5b5os38lfa0i8.apps.googleusercontent.com
             client-secret: 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
             redirect-uri: http://localhost:8080/member/login/oauth2/code/google
-#            authorization-grant-type: authorization_code
             scope:
               - email
               - profile
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      password: 1234
 
 jwt:
   secret: 7a9eWE6Bd0cEu4xP5TT95KUYllR8RqhP7BfA+9rsoG8sugI4fHBa/X8PZ2l3psJsfaKQQG6x9DYpK7Sd5TJrAw==
